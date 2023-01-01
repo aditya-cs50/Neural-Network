@@ -39,3 +39,17 @@ plt.ylabel("accuracy")
 plt.ylim(0, 1.0)
 plt.legend(loc='lower right')
 plt.show()
+
+# classify training images
+%matplotlib inline 
+from matplotlib import pyplot as plt
+
+array = []
+for i in range(10):
+    x = x_train[i]
+    plt.imshow(x.reshape(28,28), interpolation='nearest')
+    plt.show()
+    k = np.argmax(network.predict(x))
+    array.append(k)
+    print(k)
+    
